@@ -1,0 +1,68 @@
+# Byte-compiled / optimized
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+*.o
+*.dll
+*.dylib
+*.so.*
+
+# Distribution / packaging
+*.egg-info/
+*.egg
+dist/
+build/
+develop-eggs/
+*.whl
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+.DS_Store
+
+# Environment
+.env
+.env.local
+venv/
+env/
+venv/
+
+# Logs (don't track log files)
+logs/*.log
+logs/*.log.*
+logs/*.gz
+
+# Sensitive
+*.pem
+*.key
+*.cert
+*.crt
+*.key
+
+# Reflectors (too large for git)
+reflectors/dns/*.txt
+reflectors/ntp/*.txt
+reflectors/memcached/*.txt
+reflectors/ssdp/*.txt
+
+# Wordlists (too large for git)
+wordlists/*.txt
+wordlists/*.csv
+
+# Test outputs
+tests/__pycache__/
+tests/.pytest_cache/
+.pytest_cache/
+
+# Encrypted logs
+logs/*.enc

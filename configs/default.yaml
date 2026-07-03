@@ -1,0 +1,64 @@
+ironcarrier:
+  general:
+    name: "IronCarrier"
+    version: "2.4.0"
+    debug: false
+    log_level: "INFO"
+    
+  engine:
+    max_threads: 500
+    timeout: 10
+    retry_count: 3
+    retry_delay: 1.0
+    
+  opsec:
+    randomize_src_port: true
+    randomize_seq: true
+    randomize_window: true
+    ttl: 64
+    tos: 0
+    
+  proxy:
+    enabled: false
+    file: "reflectors/proxies.txt"
+    rotation: "round-robin"
+    max_uses_per_proxy: 100
+    test_on_start: true
+    timeout: 5
+    
+  vectors:
+    tcp:
+      flags:
+        - SYN
+        - ACK
+        - PSH+ACK
+        - RST
+      payload_size: 0
+      checksum: true
+    udp:
+      size: 1024
+      randomize_payload: true
+    http:
+      method: "GET"
+      path: "/"
+      keep_alive: true
+      follow_redirects: false
+      randomize_headers: true
+      cache_bust: true
+    slowloris:
+      headers_per_interval: 5
+      interval: 15
+      max_connections: 500
+    amplification:
+      vector: "dns"
+      reflector_file: null
+      spoof_ip: true
+      
+  logging:
+    enabled: true
+    dir: "logs/"
+    rotate_size_mb: 100
+    encrypt: false
+    export_formats:
+      - json
+      - csv
