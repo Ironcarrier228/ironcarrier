@@ -23,6 +23,14 @@ The project is intentionally minimal with no external build system; each Python 
 │   ├─ init.py           # Entry point for the CLI
 │   ├─ logger.py         # Structured logging utilities
 │   └─ stats.py          # Statistics collection/reporting
+├─ utils/                # Utility modules
+│   ├─ init.py           # Utility package initializer
+│   └─ recon/            # Reconnaissance helpers
+│       ├─ init.py
+│       ├─ port_scanner.py
+│       ├─ service_detect.py
+│       ├─ subnet_scanner.py
+│       └─ vuln_scan.py
 ├─ vectors/              # Attack vector implementations
 │   ├─ amplification/    # Amplification vectors
 │   │   ├─ dns_amp.py
@@ -108,7 +116,7 @@ Replace `DNSAmplificationVector` with any other vector class from `vectors/ampli
 
 ## License
 
-This project is licensed under the terms of the ** GNU AGPL v3 License** – see the `LICENSE` file for details.
+This project is licensed under the terms of the **GNU AGPL v3 License** – see the `LICENSE` file for details.
 
 ---
 
