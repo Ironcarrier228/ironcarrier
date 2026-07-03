@@ -56,6 +56,18 @@ The project is intentionally minimal with no external build system; each Python 
 
 ## Getting Started
 
+## Security Notice
+
+This repository contains **offensive network‑attack vectors** (e.g., DNS amplification, HTTP slow‑loris, TCP/UDP flood scripts). These tools are provided **solely for research, education, and authorized penetration‑testing**.
+
+- Do **not** run any vector against systems you do not have explicit permission to test.
+- Misuse may be illegal in many jurisdictions and can cause service disruption.
+- The authors assume no liability for any damage caused by misuse of these scripts.
+
+By using this code you agree to comply with all applicable laws and obtain proper authorization before any testing.
+
+
+
 ### Prerequisites
 
 - Python 3.9+ (the code uses type hints and f‑strings).
