@@ -162,7 +162,7 @@ cd ironcarrier
 pip install -e .  # optional – creates an editable install
 ```
 
-> **Note**: The repository does not contain a `setup.py` or `pyproject.toml`. For simple usage you can add the repository root to `PYTHONPATH`:
+> **Note**: The repository is contain a `setup.py'. So you dont need to use this(i dont want to remove it):
 >
 > ```bash
 > export PYTHONPATH=$(pwd):$PYTHONPATH
