@@ -13,7 +13,7 @@ The project is intentionally minimal with no external build system; each Python 
 
 ---
 
-## Directory Structure
+## Project Structure
 
 ```
 .
@@ -24,29 +24,30 @@ The project is intentionally minimal with no external build system; each Python 
 │   ├─ logger.py         # Structured logging utilities
 │   └─ stats.py          # Statistics collection/reporting
 ├─ utils/                # Utility modules
-│   ├─ init.py           # Utility package initializer
+│   ├─ __init__.py
 │   └─ recon/            # Reconnaissance helpers
-│       ├─ init.py
+│       ├─ __init__.py
 │       ├─ port_scanner.py
 │       ├─ service_detect.py
 │       ├─ subnet_scanner.py
 │       └─ vuln_scan.py
 ├─ vectors/              # Attack vector implementations
 │   ├─ amplification/    # Amplification vectors
-│   │   ├─ dns_amp.py
-│   │   ├─ ntp_amp.py
-│   │   ├─ ssdp_amp.py
-│   │   ├─ memcached_amp.py
 │   │   ├─ chargen_amp.py
 │   │   ├─ cldap_amp.py
-│   │   └─ misc_amp.py
+│   │   ├─ dns_amp.py
+│   │   ├─ __init__.py
+│   │   ├─ memcached_amp.py
+│   │   ├─ misc_amp.py
+│   │   ├─ ntp_amp.py
+│   │   └─ ssdp_amp.py
 │   └─ layer7/          # Layer‑7 (HTTP) vectors
-│       ├─ http_flood.py
-│       ├─ slowloris.py
-│       ├─ slowpost.py
-│       ├─ http_bypass.py
 │       ├─ hammer.py
-│       └─ rage.py
+│       ├─ http_bypass.py
+│       ├─ http_flood.py
+│       ├─ rage.py
+│       ├─ slowloris.py
+│       └─ slowpost.py
 ├─ LICENSE
 └─ README.md            # (this file)
 ```

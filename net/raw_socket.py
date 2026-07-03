@@ -400,3 +400,55 @@ class PacketBuilder:
     def ack(self, ack: int) -> 'PacketBuilder':
         self._ack = ack
         return self
+    
+    def flags(self, flags: int) -> 'PacketBuilder':
+        self._tcp_flags = flags
+        return self
+    
+    def window(self, window: int) -> 'PacketBuilder':
+        self._window = window
+        return self
+    
+    def payload(self, data: bytes) -> 'PacketBuilder':
+        self._payload = data
+        return self
+    
+    def build(self) -> bytes:
+        """Build complete packet"""
+        if self._protocol == Protocol.TCP:
+            tcp_header = RawSocket.build_tcp_header(
+                self._src_port, self._dst_port,
+                self._seq, self._ack,
+                self._tcp_flags, self._window
+            )
+            ip_header = RawSocket.build_ip_header(
+                self._src_ip, self._dst_ip,
+                Protocol.TCP, len(tcp_header) + len(self._payload),
+                self._ttl, self._tos
+            )
+            return ip_header + tcp_header + self._payload
+        
+        elif self._protocol == Protocol.UDP:
+            udp_header = RawSocket.build_udp_header(
+                self._src_port, self._dst_port,
+                len(self._payload)
+            )
+            ip_header = RawSocket.build_ip_header(
+                self._src_ip, self._dst_ip,
+                Protocol.UDP, len(udp_header) + len(self._payload),
+                self._ttl, self._tos
+            )
+            return ip_header + udp_header + self._payload
+        
+        elif self._protocol == Protocol.ICMP:
+            icmp_header = RawSocket.build_icmp_header(
+                self._seq, self._ack, self._payload
+            )
+            ip_header = RawSocket.build_ip_header(
+                self._src_ip, self._dst_ip,
+                Protocol.ICMP, len(icmp_header),
+                self._ttl, self._tos
+            )
+            return ip_header + icmp_header
+        
+        return b''
