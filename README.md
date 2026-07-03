@@ -16,41 +16,120 @@ The project is intentionally minimal with no external build system; each Python 
 ## Project Structure
 
 ```
-.
-├─ core/                 # Core engine
-│   ├─ config.py         # Configuration handling
-│   ├─ engine.py         # Main execution logic
-│   ├─ init.py           # Entry point for the CLI
-│   ├─ logger.py         # Structured logging utilities
-│   └─ stats.py          # Statistics collection/reporting
-├─ utils/                # Utility modules
-│   ├─ __init__.py
-│   └─ recon/            # Reconnaissance helpers
-│       ├─ __init__.py
-│       ├─ port_scanner.py
-│       ├─ service_detect.py
-│       ├─ subnet_scanner.py
-│       └─ vuln_scan.py
-├─ vectors/              # Attack vector implementations
-│   ├─ amplification/    # Amplification vectors
-│   │   ├─ chargen_amp.py
-│   │   ├─ cldap_amp.py
-│   │   ├─ dns_amp.py
-│   │   ├─ __init__.py
-│   │   ├─ memcached_amp.py
-│   │   ├─ misc_amp.py
-│   │   ├─ ntp_amp.py
-│   │   └─ ssdp_amp.py
-│   └─ layer7/          # Layer‑7 (HTTP) vectors
-│       ├─ hammer.py
-│       ├─ http_bypass.py
-│       ├─ http_flood.py
-│       ├─ rage.py
-│       ├─ slowloris.py
-│       └─ slowpost.py
-├─ LICENSE
-└─ README.md            # (this file)
-```
+ironcarrier/
+├── README.md
+├── requirements.txt
+├── ironcarrier/
+│   ├── __init__.py
+│   ├── core/
+│   │   ├── __init__.py
+│   │   ├── engine.py
+│   │   ├── config.py
+│   │   ├── logger.py
+│   │   └── stats.py
+│   ├── vectors/
+│   │   ├── __init__.py
+│   │   ├── layer4/
+│   │   │   ├── __init__.py
+│   │   │   ├── tcp_flood.py
+│   │   │   ├── udp_flood.py
+│   │   │   ├── syn_flood.py
+│   │   │   ├── ack_flood.py
+│   │   │   ├── udp_lag.py
+│   │   │   └── blacknurse.py
+│   │   ├── layer7/
+│   │   │   ├── __init__.py
+│   │   │   ├── http_flood.py
+│   │   │   ├── http_bypass.py
+│   │   │   ├── slowloris.py
+│   │   │   ├── slowpost.py
+│   │   │   ├── rage.py
+│   │   │   └── hammer.py
+│   │   └── amplification/
+│   │       ├── __init__.py
+│   │       ├── dns_amp.py
+│   │       ├── ntp_amp.py
+│   │       ├── memcached_amp.py
+│   │       ├── ssdp_amp.py
+│   │       ├── cldap_amp.py
+│ │       ├── chargen_amp.py
+│   │       └── misc_amp.py
+│   ├── utils/
+│   │   ├── __init__.py
+│   │   ├── recon/
+│   │   │   ├── __init__.py
+│   │   │   ├── port_scanner.py
+│   │   │   ├── subnet_scanner.py
+│   │   │   ├── service_detect.py
+│   │   │   └── vuln_scan.py
+│   │   ├── osint/
+│   │   │   ├── __init__.py
+│   │   │   ├── geolocator.py
+│   │   │   ├── whois.py
+│   │   ├── dns_enum.py
+│   │   ├── subdomain.py
+│   │   ├── shodan.py
+│   │   └── hunter.py
+│   │   ├── proxy/
+│   │   │   ├── __init__.py
+│   │   │   ├── manager.py
+│   │   │   ├── rotator.py
+│   │   │   ├── scraper.py
+│   │   │   ├── socks.py
+│   │   └── validator.py
+│   │   ├── payload/
+│   │   │   ├── __init__.py
+│   │   │   ├── generator.py
+│   │   │   ├── obfuscator.py
+│   │   │   ├── fragmentation.py
+│   │   │   └── templates.py
+│   │   └── opsec/
+│   │       ├── __init__.py
+│   │       ├── log_cleaner.py
+│   │       ├── process_hide.py
+│   │       ├── artifact_hide.py
+│   │       └── traffic_noise.py
+│   ├── net/
+│   │   ├── __init__.py
+│   │   ├── raw_socket.py
+│   │   ├── tcp_stack.py
+│   │   └── tunnel.py
+│   ├── c2/
+│   │   ├── __init__.py
+│   │   ├── encryption.py
+│   │   ├── protocol.py
+│   │   ├── client.py
+│   │   └── server.py
+│   ├── gui/
+│   │   ├── __init__.py
+│   │   ├── web/
+│   │   │   ├── __init__.py
+│   │   │   ├── app.py
+│   │   │   ├── api.py
+│   │   │   ├── websocket.py
+│   │   │   ├── templates/
+|   │   │   └── index.html
+│   │   │   └── static/
+│   │   └── tui/
+│   │       ├── __init__.py
+│   │       ├── main.py
+│   │       ├── panels.py
+│   │       └── widgets.py
+│   └── plugins/
+│       ├── __init__.py
+│       ├── api.py
+│       ├── loader.py
+│       └── examples/
+│           ├── __init__.py
+│           ├── telegram_notify.py
+│           ├── discord_webhook.py
+│           └── auto_schedule.py
+├── configs/
+│   └── default.yaml
+├── reflectors/
+├── wordlists/
+├── logs/
+└── tests/
 
 ---
 
