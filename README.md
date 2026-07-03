@@ -108,10 +108,10 @@ Replace `DNSAmplificationVector` with any other vector class from `vectors/ampli
 
 ## License
 
-This project is licensed under the terms of the **MIT License** – see the `LICENSE` file for details.
+This project is licensed under the terms of the ** GNU AGPL v3 License** – see the `LICENSE` file for details.
 
 ---
 
 ## Contributing
 
-Contributions are welcome! Please open an issue or pull request with a clear description of the change. Follow the existing code style (PEP 8) and include docstrings for any new public classes or functions.
+Contributions are not welcome! Please do not open an issue or pull request with a clear description of the change. Follow for any new public changes  or functions.
