@@ -24,7 +24,7 @@ This repository contains **offensive network attack vectors** and stress-testing
 
 ## 📋 Overview
 
-IronCarrier is organized as a **modular attack framework** with clear separation of concerns:
+Ironcarrier is organized as a **modular attack framework** with clear separation of concerns:
 
 ### Core Components
 
