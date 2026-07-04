@@ -1,8 +1,6 @@
 from setuptools import setup, find_packages
-
 with open('README.md', 'r', encoding='utf-8') as f:
     long_description = f.read()
-
 setup(
     name='ironcarrier',
     version='2.4.0',
@@ -31,20 +29,20 @@ setup(
     include_package_data=True,
     package_data={
         'ironcarrier': [
-            ('ironcarrier/vectors/layer4/*.py', None, None),
-            ('ironcarrier/vectors/layer7/*.py', None, None),
-            ('ironcarrier/vectors/amplification/*.py', None, None),
-            ('ironcarrier/utils/recon/*.py', None, None),
-            ('ironcarrier/utils/osint/*.py', None, None),
-            ('ironcarrier/utils/proxy/*.py', None, None),
-            ('ironcarrier/utils/payload/*.py', None, None),
-            ('ironcarrier/utils/opsec/*.py', None, None),
-            ('ironcarrier/net/*.py', None, None),
-            ('ironcarrier/c2/*.py', None, None),
-            ('ironcarrier/gui/web/*.py', None, None),
-            ('ironcarrier/gui/tui/*.py', None, None),
-            ('ironcarrier/plugins/*.py', None, None),
-            ('ironcarrier/plugins/examples/*.py', None, None),
+            'vectors/layer4/*.py',
+            'vectors/layer7/*.py',
+            'vectors/amplification/*.py',
+            'utils/recon/*.py',
+            'utils/osint/*.py',
+            'utils/proxy/*.py',
+            'utils/payload/*.py',
+            'utils/opsec/*.py',
+            'net/*.py',
+            'c2/*.py',
+            'gui/web/*.py',
+            'gui/tui/*.py',
+            'plugins/*.py',
+            'plugins/examples/*.py',
         ],
     },
     zip_safe=False,
