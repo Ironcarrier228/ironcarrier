@@ -1,0 +1,7 @@
+# ═══════════════════════════════════════════════════════════════
+# Ironcarrier Dependencies (Windows Only)
+# Usage: pip install -r requirements.txt -r requirements-windows.txt
+# ═══════════════════════════════════════════════════════════════
+
+# Windows agent support
+pywin32>=306

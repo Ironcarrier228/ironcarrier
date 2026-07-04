@@ -1,5 +1,5 @@
 # ═══════════════════════════════════════════════════════════════
-# Ironcarrier Dependencies
+# Ironcarrier Dependencies (Universal)
 # pip install -r requirements.txt
 # ═══════════════════════════════════════════════════════════════
 
@@ -45,19 +45,13 @@ build>=1.0.0
 # ── Optional: Performance ──────────────────────────────────────────
 uvloop>=0.19.0
 
-# ── Platform Specific ────────────────────────────────────────────
-# Linux (required for raw sockets)
-# No additional packages needed, uses standard library socket module
-
-# Windows (for Windows agent support - optional)
-pywin32>=306
-
-# macOS (optional, for macOS agent support)
-py2app>=0.28
-
 # ── Dev Tools ──────────────────────────────────────────────────
-ipaddress>=1.5.0
 httpx>=0.24.0
+
+# ── Platform Specific ────────────────────────────────────────────
+# Windows: pip install -r requirements-windows.txt
+# macOS:   pip install -r requirements-macos.txt
+# Linux:   No additional packages needed
 
 # ── Version Pinning ─────────────────────────────────────────────
 # cryptography>=41.0.0,<43.0.0

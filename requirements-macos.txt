@@ -1,0 +1,7 @@
+# ═══════════════════════════════════════════════════════════════
+# Ironcarrier Dependencies (macOS Only)
+# Usage: pip install -r requirements.txt -r requirements-macos.txt
+# ═══════════════════════════════════════════════════════════════
+
+# macOS agent support & app bundling
+py2app>=0.28
