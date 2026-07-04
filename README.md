@@ -539,5 +539,5 @@ We welcome contributions! To contribute:
 ---
 
 **Last Updated:** July 2026  
-**Maintained By:** IronCarrier Team  
+**Maintained By:** Ironcarrier Team  
 **Status:** Active Development
